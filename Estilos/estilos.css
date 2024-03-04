@@ -1,0 +1,376 @@
+/*
+version: 1.0;
+autor: Marcos Molinelli;
+Nro alumno: 296285;
+email ort: mm296285@fi365.ort.edu.uy;
+email personal: marcosmolinelli@gmail.com;
+*/
+
+/***** GENERAL *****/
+* {/* Quito rellenos y margenes */
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+html {
+    scroll-behavior:smooth;/*accion para que baje mas lento a los id*/
+  }
+img {/*aplico a todas las imagenes */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+body{
+	max-width: 1440px;
+	margin: 0 auto;
+}
+/***** GENERAL *****/
+
+/***** TIPOGRAFIA *****/
+@font-face {
+    font-family: 'Martel', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Martel:wght@200&display=swap');
+    font-family: 'Ubuntu', sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+}
+/***** TIPOGRAFIA *****/
+
+/***** ENCABEZADOS *****/
+header{
+    display: grid;
+    grid-template: 130px / 120px 200px repeat(2,100px) repeat(4,200px) 120px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+header img{
+    grid-column: 2/4;
+}
+header nav{
+    grid-column: 5/9;
+}
+nav ul{ /*Actua sobre nav del footer tambien*/
+	list-style-type: none;
+	font-size: 0px;
+}
+nav ul li { /*Actua sobre nav del footer, sin importar letras, ya que en el footer no tiene */
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+nav ul li a {/*Actua sobre nav del footer, sobre escribo en el del footer */
+    display: block;
+    width: 200px;
+    text-align: center;
+    line-height: 130px;
+    text-decoration: none;
+    color: rgb(148, 175, 159);
+    text-shadow: 0.5px 0.5px 1px black ;
+    font-weight: bold;
+}
+@keyframes cambioColores {
+    0% {background-color: #BBD6B8;}
+    50% {background-color: #94AF9F;}
+    100% {background-color: #BBD6B8;}
+}
+header nav ul li a:hover {
+    color: white;
+    animation: cambioColores 2s infinite;
+}
+/***** ENCABEZADOS *****/
+
+/***** PRINCIPAL *****/
+
+
+/***** Forrest Gumpl *****/
+section:first-child{ /* Seccion 1, con imagen y nombre de la pelicula */
+    height: 500px;
+    font-size: 80px;
+    font-family: 'Martel', serif;
+    background-color: green;
+    background-image: url("../Img/Portada.png");
+    background-size: cover;
+    color: #DBE4C6;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 5px 5px black ;
+    grid-area: 2/1/3/10;
+    display: flex;
+}
+/***** Forrest Gumpl *****/
+/***** PRINCIPAL *****/
+section{
+    scroll-margin-top: 130px;
+}
+/***** Actores *****/
+#actores,#trama{/* actua sobre ambas secciones y sobre escribe luego */
+    width: 1200px;
+    margin: 0 auto;
+}
+#actores{
+    padding: 40px 0;
+    display: grid;
+    grid-template: 50px 590px / repeat(4,285px);
+    gap: 20px;
+}
+section h2{/*Ataca a todos, para luego sobre escribir los detalles a cambiar. */
+    margin: 0 auto;
+    color: #94AF9F;
+    font-size: 45px;
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    grid-column: 1/5; 
+}
+#actores article{
+    display: grid;
+    grid-template: 50px 50px 1fr/ 100px 1fr;
+    border: 2px solid #cad6b0;
+    background-color: #f1f3ec;
+    box-shadow: 5px 5px 2px #BBD6B8;
+    transition: transform 0.6s;
+}
+#actores article:hover {
+    transform: scale(1.2); /* aplica una escala del 120% al elemento cuando se pasa el mouse por encima */
+}
+#actores article figure {
+    grid-row: 1/3;
+    padding: 10px;
+}
+#actores article figure img {
+    border-radius: 50%;
+}
+#actores article h3, h4{
+    grid-column: 2/3;
+}
+#actores article h3{
+    padding-top: 20px;
+}
+#actores article h4{
+    padding-top: 5px;
+}
+#actores article p {
+    padding: 15px;
+    grid-area: 3/1/4/5;
+    border-top: 1px solid #DBE4C6;
+}
+/***** Actores *****/
+
+/***** Escenas *****/
+#escenas{
+    display: flex;
+    background-color: rgb(5, 32, 15);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#escenas article {
+    margin-top: 40px;
+    display: grid;
+    grid-template: 50px 230px 230px 40px/ 250px 320px 320px 250px;
+    gap: 20px;
+
+}
+#escenas figure:hover {
+    transition: transform 1s;
+}
+#escenas figure:hover {
+    transform: scale(1.3); /* aplica una escala del 110% al elemento cuando se pasa el mouse por encima */
+}
+#escenas h2{
+    color: #DBE4C6;
+    text-shadow: 1px 1px 1px rgb(13, 208, 84);
+    grid-area: 1/1/2/5;
+}
+#escenas article figure:nth-child(2){
+    background-color: green;
+    grid-area: 2/1/4/2;
+}
+#escenas article figure:nth-child(3){
+    background-color: orange;
+    grid-area: 2/2/3/3;
+}
+#escenas article figure:nth-child(4){
+    background-color: greenyellow;
+    grid-area: 2/3/3/5;
+}
+#escenas article figure:nth-child(5){
+    background-color: skyblue;
+    grid-area: 3/2/4/4;
+}
+#escenas article figure:nth-child(5){
+    background-color: red;
+}
+/***** Escenas *****/
+
+/***** Trama *****/
+#trama{
+    padding: 40px 0px;
+    display: grid;
+    grid-template: 50px 520px / repeat(3,390px);
+    gap: 15px;
+}
+#trama article{
+    background-color: #BBD6B8;
+    border: 2px solid #373f3a;
+    display: grid;
+    grid-template: 300px 40px 120px/ 390px;
+    overflow: hidden; /* oculta lo que sobresale de la imagen */
+    transition: transform 1s;
+}
+#trama article:hover{
+    transform: scale(1.1);
+    background-color: #6ab362;
+}
+#trama article h3,p{
+    padding: 15px;
+}
+#trama input{
+    margin: 10px;
+    width: 100px;
+    padding: 0 0.5rem;
+    background: #DBE4C6;
+    color: black;
+    font-weight: bold;    
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px black ;
+    transition: transform 1s;
+}
+#trama input:hover{
+    background: #4b6554;;
+    color: white;
+    transform: scale(1.2);
+}
+/***** Trama *****/
+
+/***** FOOTER *****/
+footer{
+    padding-top: 30px;
+    display: grid;
+    grid-template:  240px 120px 60px / 120px 560px 80px 560px 120px;
+    background-color:#e1eee0;
+}
+
+/***** TABLA *****/
+table{
+    grid-area: 1/2/2/3;
+    border-collapse:collapse;
+}
+td,th{
+    border: 1px solid #94AF9F;
+}
+tr:nth-child(n+2){
+    background-color: white;
+}
+tr:nth-child(even){
+    background-color:#94AF9F;
+}
+th{
+    background-color: rgb(5, 32, 15);
+    color: white;
+    text-align: left;
+}
+td,th{
+    padding-left: 10px;
+}
+tr:hover{
+    background-color: #6ab362;
+}
+/***** TABLA *****/
+
+/***** LISTA *****/
+footer ul{
+    grid-area: 2/2/3/3;
+    margin-bottom: 20PX;
+}
+footer ul li {
+    List-style-position: inside;
+    padding-left: 10px;
+    line-height: 35px;
+}
+/***** LISTA *****/
+
+/***** FORMULARIO DE COMENTARIOS *****/
+form {
+    grid-area: 1/4/3/5;
+    padding: 20px;
+    margin-bottom: 20PX;
+    background-color: white;
+    display: grid;
+    grid-template: 30px repeat(2,50px) 80px 1fr/ repeat(2,1fr);
+    gap: 10px;
+}
+form h2{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px #1e5532;
+    grid-column: 1/3;
+}
+fieldset {
+	border: none;
+    overflow:none;
+}
+form fieldset:nth-of-type(3){
+    grid-area: 3/1/4/3;
+}
+form fieldset:nth-of-type(4){
+    grid-area: 4/1/5/3;
+}
+form input{
+    grid-area: 5/1/6/3;
+} 
+form input[type="submit"]{
+    background-color: #1e5532;
+    color: aliceblue;
+    font-weight: bolder;
+} 
+form label{
+    display: block;
+}
+form input, select, textarea{
+    box-sizing: border-box;/*Lo uso para que se acoplen al contorno del gird*/
+	padding: 5px;
+	border: 1px solid #94AF9F;
+	border-radius: 5px;
+    width: 100%;
+}
+form textarea{
+    height: 80%;
+    font-family: 'Ubuntu', sans-serif;
+}
+form input:hover, select:hover, textarea:hover{
+    background-color:#d9e3d8;
+    font-weight: bolder;
+}
+form input:hover[type="submit"]{
+    background-color: #6ab362;
+    text-shadow: 2px 2px 5px black;
+} 
+/***** FORMULARIO DE COMENTARIOS *****/
+
+/***** LISTA  CON REDES SOCIALES*****/
+footer nav{
+    width: 1200px;
+    grid-area: 3/2/4/5;
+    margin: 0px auto;
+    padding: 10px 0;
+    border-top: 1px solid #94AF9F;
+    text-align: center;
+}
+footer nav ul li a{
+    width: 30px;
+    line-height: 0px; /*Le tengo que dar algo */
+    margin: 0px 10px;
+    transition: transform 0.2s;
+}
+footer ul li a:hover {/* FALTA TERMINAR DE DAR EFECTO AL HOVER*/
+    transform: scale(2);
+}
+footer p{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+}
+/***** LISTA  CON REDES SOCIALES*****/
